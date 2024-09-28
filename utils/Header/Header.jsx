@@ -35,7 +35,7 @@ const Header = () => {
       <ul className="header__list-links">
         {linksList.map((currLink, index) => (
           <li key={`header_link_${index}`}>            
-            <Link className="header__link" to={currLink.link}>
+            <Link className="header__link" href={currLink.link}>
               <span>{currLink.name}</span>
             </Link>
           </li>

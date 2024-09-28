@@ -3,18 +3,18 @@
   @import "./utils/mixins";
   @import "./utils/variables";
 
-body {
+.body {
   @extend %body-text;
   color: $c-black;
   overflow-x: hidden;
   opacity: 1;
+  &::selection {
+    color: #5f00f9;
+    background: #6929ff1b;
+    mix-blend-mode: difference;
+  }
 }
 
-::selection {
-  color: #5f00f9;
-  background: #6929ff1b;
-  mix-blend-mode: difference;
-}
 
 // ::-webkit-scrollbar {
 //   display: none;
