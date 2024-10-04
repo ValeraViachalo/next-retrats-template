@@ -1,49 +1,38 @@
-import Link from "next/link"
-import { Logo } from "../Logo/Logo"
-import styles from "./Header.module.scss";
-
-const linksList = [
-  {
-    "name": "Home",
-    "link": "/",
-    "isAnchor": false
-  },
-  {
-    "name": "Clement",
-    "link": "#clement",
-    "isAnchor": true,
-    "page": "/"
-  },
-  {
-    "name": "FAQ",
-    "link": "/faq",
-    "isAnchor": false
-  },
-  {
-    "name": "Medium",
-    "link": "blog",
-    "isAnchor": false
-  }
-]
+import Link from "next/link";
+import { Logo } from "../Logo/Logo";
+import s from "./Header.module.scss";
+import { DataContext, DataProvider } from "@/providers/DataProvider/DataProvider";
+import { useContext } from "react";
+import { URL_HEADER } from "@/helpers/DataUrls";
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-    <Logo className="header__logo" />
+    <DataProvider url={URL_HEADER}>
+      <HeaderContent />
+    </DataProvider>
+  );
+};
 
-    <div className="header__wrapper">
-      <ul className="header__list-links">
-        {linksList.map((currLink, index) => (
-          <li key={`header_link_${index}`}>            
-            <Link className="header__link" href={currLink.link}>
-              <span>{currLink.name}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </header>
-  )
-}
+const HeaderContent = () => {
+  const { data: linksList } = useContext(DataContext);
 
-export default Header
+  return (
+    <header className={s.header}>
+      <Logo className={s.header__logo} />
+
+      <div className={s.header__wrapper}>
+        <ul className={s.header__list_links}>
+          {linksList.map((currLink, index) => (
+            <li key={`header_link_${index}`}>
+              <Link className={s.header__link} href={currLink.link}>
+                <span>{currLink.name}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

@@ -1,11 +1,13 @@
 import HomePage from "@/components/HomePage/HomePage";
-import Head from "next/head";
+import { URL_HOME } from "@/helpers/DataUrls";
+import { DataProvider } from "@/providers/DataProvider/DataProvider";
+import { PageHead } from "@/utils/PageHead/PageHead";
 
 export default function Home() {
   return (
-    <>
-      <Head />
+    <DataProvider url={URL_HOME}>
+      <PageHead />
       <HomePage />
-    </>
+    </DataProvider>
   );
 }

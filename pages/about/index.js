@@ -1,16 +1,13 @@
-import Head from "next/head";
-import AboutPage from "../components/AboutPage/AboutPage";
+import AboutPage from "@/components/AboutPage/AboutPage";
+import { URL_ABOUT } from "@/helpers/DataUrls";
+import { DataProvider } from "@/providers/DataProvider/DataProvider";
+import { PageHead } from "@/utils/PageHead/PageHead";
 
 export default function About() {
   return (
-    <>
-    <Head>
-    <title>Create App</title>
-    <meta name="description" content="Generated" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <AboutPage />
-    </>
+    <DataProvider url={URL_ABOUT}>
+      <PageHead />
+      <AboutPage />
+    </DataProvider>
   );
 }

@@ -15,10 +15,31 @@
   }
 }
 
+.html {
+  scrollbar-width: none; /* Firefox 64+ */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  overflow: -moz-scrollbars-none;
 
-// ::-webkit-scrollbar {
-//   display: none;
-// }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  &::-moz-scrollbar {
+    display: none; /* Firefox до версії 64 */
+  }
+}
+
+@supports (-ms-overflow-style: none) {
+  .html {
+    -ms-overflow-style: none;
+  }
+}
+
+@supports (-ms-overflow-style: none) {
+  .html {
+    overflow: -ms-autohiding-scrollbar;
+  }
+}
 
 .container {
   padding-right: 4vw;
@@ -36,5 +57,15 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+  }
+}
+
+.lazyload-wrapper {
+  height: 100%;
+  width: 100%;
+  
+  img, video {
+    height: 100%;
+    width: 100%;
   }
 }
