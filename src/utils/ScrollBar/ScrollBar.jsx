@@ -1,7 +1,7 @@
 import { useScroll, useSpring, motion, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useScrollLenis } from "../../providers/ScrollProvider/ScrollProvider";
 import s from "./ScrollBar.module.scss";
+import { useScrollLenis } from "@/lib/providers/ScrollProvider/ScrollProvider";
 
 export const ScrollBar = ({}) => {
   const [rangeValue, setRangeValue] = useState(0);
@@ -20,7 +20,9 @@ export const ScrollBar = ({}) => {
 
   useEffect(() => {
     setIsMounted(true);
-    setDocumentHeight(document.documentElement.scrollHeight - window.innerHeight);
+    setDocumentHeight(
+      document.documentElement.scrollHeight - window.innerHeight
+    );
   }, []);
 
   const handleRangeChange = (e) => {

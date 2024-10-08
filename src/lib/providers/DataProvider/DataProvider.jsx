@@ -1,7 +1,8 @@
-import React, { createContext } from "react";
+import React from "react";
 import { useQuery } from "react-query";
+import { DataContext } from "./context";
 
-export const getData = async (url) => {
+const getData = async (url) => {
   try {
     const response = await fetch(url, {
       cache: "no-cache",
@@ -18,8 +19,6 @@ export const getData = async (url) => {
     throw error;
   }
 };
-
-export const DataContext = createContext();
 
 export const DataProvider = ({ children, url }) => {
   const { data, isLoading, isError, error } = useQuery({

@@ -1,12 +1,12 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { PageLayout } from "@/utils/PageLayout/PageLayout";
 import { Content } from "@/utils/Content/Content";
 import { AnchorLink } from "@/utils/AnchorLink/AnchorLink";
-import { ScrollProvider } from "@/providers/ScrollProvider/ScrollProvider";
 
 import s from "./HomePage.module.scss";
+import { ScrollProvider } from "@/lib/providers/ScrollProvider/ScrollProvider";
 
-export default function HomePage() {
+const HomePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -160,3 +160,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export default HomePage

@@ -7,8 +7,9 @@ import React, {
 } from "react";
 import dynamic from "next/dynamic";
 import { ScrollBar } from "@/utils/ScrollBar/ScrollBar";
+import { ScrollContext } from "./context";
 
-const ScrollContext = createContext();
+
 
 export const useScrollLenis = () => useContext(ScrollContext);
 

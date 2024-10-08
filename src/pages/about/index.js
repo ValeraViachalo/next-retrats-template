@@ -1,6 +1,7 @@
 import AboutPage from "@/components/AboutPage/AboutPage";
-import { URL_ABOUT } from "@/helpers/DataUrls";
-import { DataProvider } from "@/providers/DataProvider/DataProvider";
+import { URL_ABOUT } from "@/lib/helpers/DataUrls";
+import { DataProvider } from "@/lib/providers/DataProvider/DataProvider";
+
 import { PageHead } from "@/utils/PageHead/PageHead";
 
 export default function About({ data }) {

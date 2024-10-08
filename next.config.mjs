@@ -14,7 +14,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: ['styles'],
     prependData: `
-    @import 'styles/global';
+    @import '/src/styles/global';
   `,
     functions: {
       'get($keys)': function (keys) {

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Logo } from "../Logo/Logo";
 import s from "./Header.module.scss";
-import { DataContext, DataProvider } from "@/providers/DataProvider/DataProvider";
 import { useContext } from "react";
-import { URL_HEADER } from "@/helpers/DataUrls";
+import { DataProvider } from "@/lib/providers/DataProvider/DataProvider";
+import { DataContext } from "@/lib/providers/DataProvider/context";
+import { URL_HEADER } from "@/lib/helpers/DataUrls";
 
 const Header = () => {
   return (
