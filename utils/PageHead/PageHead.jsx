@@ -7,6 +7,7 @@ export const PageHead = ({ data }) => {
       <meta name="og:title" content={data.documentTitle} />
       <meta name="description" content={data.documentDescription} />
       <meta property="og:image" content={data.documentImage} />
+      <meta content="summary_large_image" name="twitter:card" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="RTRTS" />
