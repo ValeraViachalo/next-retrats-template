@@ -1,10 +1,6 @@
-import { useContext } from "react";
-import { DataContext } from "@/providers/DataProvider/DataProvider";
 import Head from "next/head";
 
-export const PageHead = () => {
-  const { data } = useContext(DataContext);
-
+export const PageHead = ({ data }) => {
   return (
     <Head>
       <title>{data.documentTitle}</title>

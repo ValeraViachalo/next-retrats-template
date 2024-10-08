@@ -5,7 +5,6 @@ import { AnchorLink } from "@/utils/AnchorLink/AnchorLink";
 import { ScrollProvider } from "@/providers/ScrollProvider/ScrollProvider";
 
 import s from "./HomePage.module.scss";
-import { PageHead } from "@/utils/PageHead/PageHead";
 
 export default function HomePage() {
   useEffect(() => {
@@ -13,6 +12,7 @@ export default function HomePage() {
   }, []);
 
   return (
+    <>
     <PageLayout className={s.home}>
       <div className={s.home_hero}>
         <Content
@@ -157,5 +157,6 @@ export default function HomePage() {
         </div>
       </ScrollProvider>
     </PageLayout>
+    </>
   );
 }
