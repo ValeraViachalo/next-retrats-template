@@ -1,3 +1,5 @@
-export const URL_HEADER = process.env.NEXT_PUBLIC_BASE_URL + "/header.json"
-export const URL_HOME = process.env.NEXT_PUBLIC_BASE_URL + "/home.json"
-export const URL_ABOUT = process.env.NEXT_PUBLIC_BASE_URL + "/about.json"
+const URL_BASE = "https://next-retrats-template.vercel.app/data"
+
+export const URL_HEADER = URL_BASE + "/header.json"
+export const URL_HOME = URL_BASE + "/home.json"
+export const URL_ABOUT = URL_BASE + "/about.json"
